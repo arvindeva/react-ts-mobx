@@ -6,7 +6,7 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build": "webpack --progress --colors --mode=production",
-    "start": "webpack-dev-server --config webpack.config.js --progress --colors --open --mode=development"
+    "start": "webpack-dev-server --config webpack.config.js --progress --colors --open --mode=development --hot"
   },
   "author": {
     "name": "Alexander T.",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@babel/core": "7.4.3",
     "@babel/plugin-proposal-class-properties": "7.4.0",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/plugin-proposal-object-rest-spread": "7.4.3",
     "@babel/preset-env": "7.4.3",
     "@babel/preset-react": "7.0.0",
@@ -31,6 +32,8 @@
   "dependencies": {
     "@types/react": "16.8.13",
     "@types/react-dom": "16.8.4",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
     "react": "16.8.6",
     "react-dom": "16.8.6"
   },

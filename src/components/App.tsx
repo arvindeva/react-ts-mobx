@@ -4,7 +4,7 @@ import { Hello } from './Hello';
 
 export const App = () => (
   <>
-    <Hello name={ 'react-webpack-typescript-babel' } />
+    <Hello name={'...'} />
     <Counter />
   </>
 );
