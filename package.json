@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-typescript-babel",
+  "name": "react-ts-mobx",
   "version": "1.0.0",
-  "description": "A sample setup using React, Webpack and Babel to build TypeScript code, and using TypeScript for type-checking.",
+  "description": "Simple boilerplate for React, TypeScript, MobX, Babel 7, and Webpack",
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
@@ -9,8 +9,8 @@
     "start": "webpack-dev-server --config webpack.config.js --progress --colors --open --mode=development --hot"
   },
   "author": {
-    "name": "Alexander T.",
-    "email": "alexander.tarasyuk@outlook.com"
+    "name": "Arvindeva",
+    "email": "arvindeva@gmail.com"
   },
   "license": "MIT",
   "devDependencies": {
@@ -32,6 +32,7 @@
   "dependencies": {
     "@types/react": "16.8.13",
     "@types/react-dom": "16.8.4",
+    "axios": "^0.18.0",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
     "react": "16.8.6",

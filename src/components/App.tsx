@@ -11,9 +11,17 @@ interface AppProps {
 @observer
 class App extends React.Component<AppProps> {
   private clickHandler = () => {
-    const { setName } = this.props.mobxStore!;
-    console.log('I am clicked');
-    setName('Bob');
+    const { setName, name } = this.props.mobxStore!;
+    if (name === 'Huhu') {
+      setName('Hehe');
+    } else {
+      setName('Huhu');
+    }
+  };
+
+  private getPokemon = () => {
+    const { getDitto } = this.props.mobxStore!;
+    getDitto();
   };
 
   render() {
@@ -24,6 +32,7 @@ class App extends React.Component<AppProps> {
         <header className="App-header">
           {greeting}
           <button onClick={this.clickHandler}>Change Greeting</button>
+          <button onClick={this.getPokemon}>Pokemon</button>
         </header>
       </div>
     );
