@@ -1,7 +1,7 @@
 {
   "name": "react-ts-mobx",
   "version": "1.0.0",
-  "description": "Simple boilerplate for React, TypeScript, MobX, Babel 7, and Webpack",
+  "description": "Simple boilerplate for React, TypeScript, MobX, Babel 7, Webpack, axios",
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",

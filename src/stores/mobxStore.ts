@@ -4,12 +4,16 @@ import axios from 'axios';
 export interface IMobxStore {
   name: string;
   greeting: string;
+  isLoading: boolean;
+  pokemonList: any[];
   setName(name: string): void;
   getDitto(): void;
 }
 
 export class MobxStore implements IMobxStore {
   @observable name = 'Hehe';
+  @observable isLoading = false;
+  @observable pokemonList = [];
 
   @computed
   public get greeting(): string {
@@ -21,11 +25,19 @@ export class MobxStore implements IMobxStore {
     this.name = name;
   }
 
-  @action
+  @action.bound
   public getDitto(): void {
+    this.isLoading = true;
     axios
       .get('https://pokeapi.co/api/v2/pokemon/')
-      .then(response => console.log(response.data.results))
-      .catch(error => console.log(error));
+      .then(response => {
+        this.isLoading = false;
+        this.pokemonList = response.data.results;
+        console.log(response.data.results);
+      })
+      .catch(error => {
+        this.isLoading = false;
+        console.log(error);
+      });
   }
 }

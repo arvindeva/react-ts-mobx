@@ -1,7 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { observer, inject } from 'mobx-react';
 
 import { IMobxStore } from '../stores/mobxStore';
+import PokemonList from './PokemonList';
 
 interface AppProps {
   mobxStore?: IMobxStore;
@@ -25,7 +26,7 @@ class App extends React.Component<AppProps> {
   };
 
   render() {
-    const { greeting } = this.props.mobxStore!;
+    const { greeting, isLoading, pokemonList } = this.props.mobxStore!;
 
     return (
       <div className="App">
@@ -33,6 +34,11 @@ class App extends React.Component<AppProps> {
           {greeting}
           <button onClick={this.clickHandler}>Change Greeting</button>
           <button onClick={this.getPokemon}>Pokemon</button>
+          {isLoading ? (
+            <p>Loading</p>
+          ) : (
+            <PokemonList pokemonList={pokemonList} />
+          )}
         </header>
       </div>
     );
